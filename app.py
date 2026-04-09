@@ -2,9 +2,11 @@ import streamlit as st
 import pickle
 import numpy as np
 
-# Load model and scaler
-model = pickle.load(open('model/model.pkl', 'rb'))
-scaler_model = pickle.load(open('model/scaler.pkl', 'rb'))
+import os
+
+base_path = os.path.dirname(__file__)
+model = pickle.load(open(os.path.join(base_path, 'model/model.pkl'), 'rb'))
+scaler_model = pickle.load(open(os.path.join(base_path, 'model/scaler.pkl'), 'rb'))
 
 # App title
 st.title("Diabetes Prediction App")
